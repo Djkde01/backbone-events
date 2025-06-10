@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ClerkProvider>
+      <ClerkProvider afterSignOutUrl={"/"}>
         <body
           className={`${poppins.variable} antialiased`}
         >
