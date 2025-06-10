@@ -1,3 +1,9 @@
+* {
+  list-style: none;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -66,13 +72,6 @@
           height: "0";
         }
       };
-}
-
-* {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
 }
 
 body {
