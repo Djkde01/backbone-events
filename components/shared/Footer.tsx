@@ -8,8 +8,8 @@ const Footer = () => {
                 <Link href="/" className="w-36">
                     <Image src="/assets/images/logo-backbone.svg" alt="Logo Backbone" width={130} height={30} />
                 </Link>
-                <p className="text-[16px] leading-[24px] text-primary-50">
-                    🄯 {new Date().getFullYear()} Backbone. Designed and developed by{" "}
+                <p className="text-[16px] leading-[24px] text-primary-50 text-center md:text-left">
+                    🄯 {new Date().getFullYear()} Backbone. <br />Diseñado y desarrollado por{" "}
                     <Link href="https://sergioestrella.com" target="_blank" rel="noopener noreferrer">
                         Djkde
                     </Link>
