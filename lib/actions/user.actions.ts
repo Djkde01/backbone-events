@@ -4,6 +4,8 @@ import { CreateUserParams, UpdateUserParams } from "@/types";
 import { handleError } from "../utils";
 import dbConnect from "../database";
 import User from "../database/models/user.model";
+import Event from "../database/models/event.model";
+import Order from "../database/models/order.model";
 
 export const createUser = async (user: CreateUserParams) => {
   try {
@@ -54,16 +56,33 @@ export const updateUser = async (
   }
 };
 
-export const deleteUser = async (id: string) => {
+export const deleteUser = async (clerkId: string) => {
   try {
     await dbConnect();
 
-    const deletedUser = await User.findByIdAndDelete(id);
+    const userToDelete = await User.findOne({ clerkId });
 
-    if (!deletedUser) {
+    if (!userToDelete) {
       throw new Error("User not found");
     }
 
+    // Unlink any related data
+    await Promise.all([
+      Event.updateMany(
+        { _id: { $in: userToDelete.events } },
+        { $pull: { organizer: userToDelete._id } }
+      ),
+
+      Order.updateMany(
+        { _id: { $in: userToDelete.orders } },
+        { $unset: { buyer: 1 } }
+      ),
+    ]);
+
+    const deletedUser = await User.findByIdAndDelete(userToDelete._id);
+    if (!deletedUser) {
+      return { message: "User not found" };
+    }
     return JSON.parse(JSON.stringify(deletedUser));
   } catch (error) {
     handleError(error);
