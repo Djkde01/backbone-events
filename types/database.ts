@@ -1,4 +1,4 @@
-import { Document } from 'mongoose';
+import { Document } from "mongoose";
 
 export interface IUser extends Document {
   clerkId: string;
@@ -22,8 +22,41 @@ export interface IEvent extends Document {
   currency: string;
   isFree: boolean;
   url: string;
-  category: {_id: string, name: string};
-  organizer: {_id: string, firstName: string, lastName: string, imageUrl: string};
+  category: { _id: string; name: string };
+  organizer: {
+    _id: string;
+    firstName: string;
+    lastName: string;
+    imageUrl: string;
+  };
   createdAt: Date;
   updatedAt: Date;
 }
+
+export interface ICategory extends Document {
+  name: string;
+}
+
+export interface IOrder extends Document {
+  createdAt: Date;
+  stripeId: string;
+  totalAmount: string;
+  event: {
+    _id: string;
+    title: string;
+  };
+  buyer: {
+    _id: string;
+    firstName: string;
+    lastName: string;
+  };
+}
+
+export type IOrderItem = {
+  _id: string;
+  totalAmount: string;
+  createdAt: Date;
+  eventTitle: string;
+  eventId: string;
+  buyer: string;
+};
