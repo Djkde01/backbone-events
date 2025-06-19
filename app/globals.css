@@ -43,10 +43,10 @@
 
   --color-coral: #15BF59;
 
-  --color-grey-50: #F6F6F6;
-  --color-grey-400: #AFAFAF;
-  --color-grey-500: #757575;
-  --color-grey-600: #545454;
+  --color-gray-50: #F6F6F6;
+  --color-gray-400: #AFAFAF;
+  --color-gray-500: #757575;
+  --color-gray-600: #545454;
 
 
   --radius-lg: 0.5rem;
@@ -79,7 +79,7 @@
 body {
   font-family: var(--font-poppins);
 }
-.filter-grey {
+.filter-gray {
   filter: brightness(0) saturate(100%) invert(47%) sepia(0%) saturate(217%)
     hue-rotate(32deg) brightness(98%) contrast(92%);
 }
@@ -200,15 +200,15 @@ body {
 
   /* SHADCN OVERRIDES */
   .select-field {
-    @apply w-full bg-grey-50 h-[54px] placeholder:text-grey-500 rounded-full text-[16px] font-normal leading-[24px] px-5 py-3 border-none focus-visible:ring-transparent focus:ring-transparent;
+    @apply w-full bg-gray-50 h-[54px] placeholder:text-gray-500 rounded-full text-[16px] font-normal leading-[24px] px-5 py-3 border-none focus-visible:ring-transparent focus:ring-transparent;
   }
 
   .input-field {
-    @apply bg-grey-50 h-[54px] focus-visible:ring-offset-0 placeholder:text-grey-500 rounded-full text-[16px] font-normal leading-[24px] px-4 py-3 border-none focus-visible:ring-transparent;
+    @apply bg-gray-50 h-[54px] focus-visible:ring-offset-0 placeholder:text-gray-500 rounded-full text-[16px] font-normal leading-[24px] px-4 py-3 border-none focus-visible:ring-transparent;
   }
 
   .textarea {
-    @apply bg-grey-50 flex flex-1 placeholder:text-grey-500 text-[16px] font-normal leading-[24px] px-5 py-3 border-none focus-visible:ring-transparent;
+    @apply bg-gray-50 flex flex-1 placeholder:text-gray-500 text-[16px] font-normal leading-[24px] px-5 py-3 border-none focus-visible:ring-transparent;
   }
 
   .button {
