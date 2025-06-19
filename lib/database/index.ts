@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 declare global {
-    // eslint-disable-next-line no-var
+  // eslint-disable-next-line no-var
   var mongoose: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
@@ -14,9 +14,7 @@ async function dbConnect() {
   const MONGODB_URI = process.env.MONGODB_URI!;
 
   if (!MONGODB_URI) {
-    throw new Error(
-      "No MONGODB_URI environment variable found.",
-    );
+    throw new Error("No MONGODB_URI environment variable found.");
   }
 
   if (cached.conn) {
@@ -24,7 +22,7 @@ async function dbConnect() {
   }
   if (!cached.promise) {
     const opts = {
-    dbName: 'backbone-events',
+      dbName: "backbone-events",
       bufferCommands: false,
     };
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
