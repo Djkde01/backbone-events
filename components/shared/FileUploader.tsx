@@ -36,7 +36,7 @@ const FileUploader = (
                 </div>
             ) : (
                 <div className="flex items-center justify-center flex-col py-5 text-gray-500">
-                    <Image src="/assets/icons/upload.svg" width={77} height={77} alt="file upload" />
+                    <Image src="/assets/icons/upload.svg" width={77} height={77} alt="file upload" className="filter-gray" />
                     <h3 className="mb-2 mt-2">Arrastra y sube una foto</h3>
                     <p className="p-medium-12 mb-4">SVG, PNG, JPG</p>
                     <Button type="button" className="rounded-full">
