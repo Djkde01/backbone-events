@@ -23,7 +23,7 @@ export interface ButtonProps {
 
 export interface EventFormProps {
   userId: string;
-  type?: "create" | "update";
+  type?: "crear" | "actualizar";
 }
 
 export interface DropdownProps {

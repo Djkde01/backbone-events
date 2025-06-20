@@ -7,6 +7,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "uploadthing/tw/v4";
+@import "react-datepicker/dist/react-datepicker.css";
 @source "../node_modules/@uploadthing/react/dist"; /** <-- depends on your project structure */
 
 @layer theme, base, components, utilities;
@@ -253,18 +254,17 @@ body {
 }
 
 .react-datepicker__input-container input {
-  background-color: transparent;
   width: 100%;
   outline: none;
   margin-left: 16px;
 }
 
 .react-datepicker__day--selected {
-  background-color: #624cf5;
-  color: #ffffff;
+  background-color: #624cf5 !important;
+  color: #ffffff !important;
   border-radius: 4px;
 }
 
 .react-datepicker__time-list-item--selected {
-  background-color: #624cf5;
+  background-color: #624cf5 !important;
 }
